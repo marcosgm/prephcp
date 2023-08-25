@@ -2,6 +2,7 @@ module "infra" {
     source = "./modules/infra-layer"
 }
 
-module "infra" {
+module "app" {
     source = "./modules/app-layer"
+    app-subnetID = module.infra.app-subnetID
 }

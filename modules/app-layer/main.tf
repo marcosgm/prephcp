@@ -30,7 +30,7 @@ resource "azurerm_network_interface" "nic" {
 
   ip_configuration {
     name                          = "tfconfiguration1"
-    subnet_id                     = azurerm_subnet.internal.id
+    subnet_id                     = var.app-subnetID
     private_ip_address_allocation = "Dynamic"
   }
 }
