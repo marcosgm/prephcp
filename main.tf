@@ -6,8 +6,15 @@ terraform {
       version = ">= 3.71.0"
     } 
   }
-  required_version = ">= 0.15"
+  required_version = ">= 1.5"
+  cloud {
+    organization = "nimbusworld-demo"
+    workspaces {
+      name = "prephcp"
+    }
+  }
 }
+
 
 provider "azurerm" {
   features {}
