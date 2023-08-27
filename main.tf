@@ -12,11 +12,6 @@ terraform {
 provider "azurerm" {
   features {}
   skip_provider_registration = "true"
-# Connection to Azure
-  subscription_id = var.az_sub
-  client_id = var.az_app
-  client_secret = var.az_secret
-  tenant_id = var.az_tenant
 }
 
 module "infra" {
