@@ -55,3 +55,11 @@ variable "restart_policy" {
     error_message = "The restart_policy must be one of the following: Always, Never, OnFailure."
   }
 }
+
+variable "env_vars" {
+  type        = map
+  description = "Environment Variables for the container"
+  default     = {
+    bookstore_title="Azure bookstore"
+    }
+}

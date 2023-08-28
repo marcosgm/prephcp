@@ -32,6 +32,6 @@ resource "azurerm_container_group" "container" {
       port     = var.port
       protocol = "TCP"
     }
-    environment_variables = {bookstore_title="Azure bookstore"}
+    environment_variables = var.env_vars
   }
 }
