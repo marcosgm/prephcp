@@ -28,4 +28,5 @@ module "infra" {
 module "app" {
     source = "./modules/app-layer"
     app-subnetID = module.infra.app-subnetID
+    vm_size = var.vm_size
 }
