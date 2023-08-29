@@ -26,10 +26,16 @@ resource "azurerm_virtual_machine" "vm" {
   network_interface_ids = [azurerm_network_interface.nic.id]
   vm_size               = var.vm_size
 
+  # Uncomment this line to delete the OS disk automatically when deleting the VM
+  delete_os_disk_on_termination = true
+
+  # Uncomment this line to delete the data disks automatically when deleting the VM
+  delete_data_disks_on_termination = true
+
   storage_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts"
     version   = "latest"
   }
   storage_os_disk {
@@ -40,7 +46,7 @@ resource "azurerm_virtual_machine" "vm" {
   }
   os_profile {
     computer_name  = "hostname"
-    admin_username = "tfadmin"
+    admin_username = "testadmin"
     admin_password = "Password1234!"
   }
   os_profile_linux_config {
