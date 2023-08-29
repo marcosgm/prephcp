@@ -10,7 +10,7 @@ terraform {
   cloud {
     organization = "nimbusworld-demo"
     workspaces {
-      name = "prephcp"
+      name = "linuxvm"
     }
   }
 }
